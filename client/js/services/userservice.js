@@ -20,7 +20,16 @@ app.service('userService', function($http) {
         });
     }
     
-    user.getDetails = () => {return localStorage.getItem('details');}
+    user.getStoredDetails = () => {
+        if(localStorage.getItem('details'))
+        {
+            return localStorage.getItem('details');   
+        }
+        else
+        {
+            return 0;   
+        }
+    }
     
 
     return user;

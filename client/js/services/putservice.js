@@ -20,11 +20,11 @@ app.service('putService', function($http) {
         });
     }
     
-    test.switch1 = function (data)
+    test.switch = function (data)
     {
         return $http({
             method: "POST",
-            url: `./switchone`,
+            url: `./updateSwitch`,
             headers: { 'Content-Type': 'application/json'},
             data: JSON.stringify(data)
             // Setting Headers, Function call to get getToken() to send to db
@@ -34,48 +34,7 @@ app.service('putService', function($http) {
             throw Error(response.data.message); 
         });
     }
-    test.switch2 = function (data)
-    {
-        return $http({
-            method: "POST",
-            url: `./switchtwo`,
-            headers: { 'Content-Type': 'application/json'},
-            data: JSON.stringify(data)
-            // Setting Headers, Function call to get getToken() to send to db
-        }).then(function(responses) {
-            return responses.data.message;
-        }).catch(function(response) {
-            throw Error(response.data.message); 
-        });
-    }
-    test.switch3 = function (data)
-    {
-        return $http({
-            method: "POST",
-            url: `./switchthree`,
-            headers: { 'Content-Type': 'application/json'},
-            data: JSON.stringify(data)
-            // Setting Headers, Function call to get getToken() to send to db
-        }).then(function(responses) {
-            return responses.data.message;
-        }).catch(function(response) {
-            throw Error(response.data.message); 
-        });
-    }
-    test.switch4 = function (data)
-    {
-        return $http({
-            method: "POST",
-            url: `./switchfour`,
-            headers: { 'Content-Type': 'application/json'},
-            data: JSON.stringify(data)
-            // Setting Headers, Function call to get getToken() to send to db
-        }).then(function(responses) {
-            return responses.data.message;
-        }).catch(function(response) {
-            throw Error(response.data.message); 
-        });
-    }
+
     
     test.switchmotor = function (data)
     {

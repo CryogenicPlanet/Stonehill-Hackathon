@@ -3,7 +3,7 @@ import numpy as np
 from PIL import Image
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
-recognizer.read('trainer.yml')
+recognizer.read('/home/ubuntu/workspace/ML/trainer.yml')
 picture = 'uploads/temp.png'
 print(picture)
 image_pil = Image.open(picture).convert('L')
