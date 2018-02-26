@@ -1,0 +1,17 @@
+{
+  "name": "Stonehill-hackathon",
+  "version": "0.1.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "~3.2.4",
+    "getenv": "^0.7.0",
+    "jsonwebtoken": "^8.1.0",
+    "promise-mysql": "^3.1.0"
+  }
+}
