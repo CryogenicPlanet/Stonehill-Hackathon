@@ -1,22 +1,21 @@
+# Stonehill Hackathon 2018
+**Winners**
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+## Project
+Using Face dection and Facial Recognition to identify indiviuals entering a room and controlling electronics in the room based on their preference, i.e turning on fans or air conditioners or which lights to turn on, what color the lights should be.
 
+## Components
 
-Welcome to your Node.js project on Cloud9 IDE!
+### IoT
 
-This chat example showcases how to use `socket.io` with a static `express` server.
+The systems requires two IoT Components, one is the camera that detects people entering the room, for us this was setup on a raspberry pi using an external webcam, the motion is detected using opencv and harr casscades. The camera takes multiple successive images and then uploades them to our server, this upload is securely encrpyted.
 
-## Running the server
+The second component is controlling the electronics through a relay, we used to control electronics. We also connected to a phillips hue hub, to control phillips hue lights
 
-1) Open `server.js` and start the app by clicking on the "Run" button in the top menu.
+### Server
 
-2) Alternatively you can launch the app from the Terminal:
+The system uses Nodejs and express, the server connects the IoT components to the machine learning and does all the data handling, in terms of preferences and predicting who the person detected is.
 
-    $ node server.js
+### Machine Learning
 
-Once the server is running, open the project in the shape of 'https://projectname-username.c9users.io/'. As you enter your name, watch the Users list (on the left) update. Once you press Enter or Send, the message is shared with all connected clients.
+The machine learning commponet uses a custom trained model, which was trained on many images of ourselves to help identify whose face the camera detected. Here we are using a convolutional neural network, and deep learning techniques. 
